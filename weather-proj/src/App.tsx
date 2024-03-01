@@ -1,11 +1,7 @@
 import { useState, useEffect } from 'react';
 import './App.scss';
+import { WeatherDataProps } from './types/types';
 
-type WeatherDataProps = {
-  location: string;
-  temperature_c: number;
-  condition: string;
-};
 
 function App() {
   const [weatherData, setWeatherData] = useState<WeatherDataProps | null>(null);
@@ -28,12 +24,16 @@ function App() {
           const { latitude, longitude } = position.coords;
           getWeather(latitude, longitude);
         },
-        (error) => {
-          console.error('Error getting location:', error);
+        () => {
+          console.error('Error getting location. Defaulting to London.');
+          // Default to London coordinates
+          getWeather(51.5074, -0.1278); // London coordinates
         }
       );
     } else {
-      console.error('Geolocation is not supported by this browser.');
+      console.error('Geolocation is not supported by this browser. Defaulting to London.');
+      // Default to London coordinates
+      getWeather(51.5074, -0.1278); // London coordinates
     }
   }, []);
 
