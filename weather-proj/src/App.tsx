@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import './App.scss';
 import { WeatherDataProps } from './types/types';
+import WeatherCard from './components/WeatherCard/WeatherCard';
 
 
 function App() {
@@ -11,9 +12,11 @@ function App() {
     const res = await fetch(url);
     const data = await res.json();
     setWeatherData({
-      location: data.location.name,
+      location: data.location.name + ", " + data.location.country,
       temperature_c: data.current.temp_c,
       condition: data.current.condition.text,
+      condition_icon: data.current.condition.icon,
+      localtime: data.location.localtime
     });
   };
 
@@ -39,13 +42,7 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Weather App</h1>
-      {weatherData && (
-        <div>
-          <h2>{weatherData.location}</h2>
-          <p>Temperature: {weatherData.temperature_c}°C</p>
-          <p>Condition: {weatherData.condition}</p>
-        </div>
+      {weatherData && (<WeatherCard {...weatherData}/>
       )}
     </div>
   );
