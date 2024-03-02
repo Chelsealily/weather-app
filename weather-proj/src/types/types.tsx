@@ -4,6 +4,10 @@ export type WeatherDataProps = {
     condition: string;
     condition_icon: string;
     localtime:string;
+    wind_mph: number,
+    humidity:number,
+    cloud: number,
+    feelslike_c: number,
   };
   
 

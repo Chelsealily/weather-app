@@ -16,7 +16,11 @@ function App() {
       temperature_c: data.current.temp_c,
       condition: data.current.condition.text,
       condition_icon: data.current.condition.icon,
-      localtime: data.location.localtime
+      localtime: data.location.localtime,
+      wind_mph: data.current.wind_mph,
+      humidity:data.current.humidity,
+      cloud: data.current.cloud,
+      feelslike_c: data.current.feelslike_c,
     });
   };
 
