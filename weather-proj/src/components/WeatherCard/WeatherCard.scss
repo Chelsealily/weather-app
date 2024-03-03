@@ -19,6 +19,10 @@
         padding:20px
     }
 
+    &__title{
+        display: flex;
+    }
+
     &__info{
         display: flex;
         flex-direction: column;
@@ -29,9 +33,10 @@
 .weathercard__moreInfo {
     display: flex;
     flex-direction: row;
-    gap: 2rem;
-    padding: 10px;
+    gap: 3rem;
+    padding: 20px;
     background-color: rgba(126, 186, 236, 0.614);
+    text-align: center;
 }    
 
 body{
@@ -55,6 +60,6 @@ img{
 
 h2 {
     font-size: 1.2rem;
-    text-decoration: underline 3px solid;
-    font-variant: small-caps;
+    text-align: center;
+    font-weight: 800;
 }
