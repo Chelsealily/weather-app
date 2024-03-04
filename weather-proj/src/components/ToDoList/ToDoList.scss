@@ -1,1 +1,41 @@
 @use "../../styles/variables" as *;
+
+.todo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &__button {
+    background-color: rgba(245, 245, 245, 0);
+    border: none;
+    font-size: 1rem;
+
+    &--reset {
+      padding: 5px;
+      width: fit-content;
+      border: none;
+      background-color: rgba(216, 216, 216, 0.535);
+      margin:10px;
+    }
+  }
+
+&__output{
+    display: flex;
+}  
+
+}
+
+.todo-container {
+  background-color: rgba(255, 234, 0, 0.22);
+  height: 47vh;
+  width: 18vw;
+  margin: 1rem;
+  padding-top: 2rem;
+}
+
+input {
+  padding: 5px;
+  border: 5px solid rgba(250, 250, 250, 0.203);
+  font-size: 1rem;
+}
+

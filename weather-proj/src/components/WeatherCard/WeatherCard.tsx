@@ -1,6 +1,7 @@
 import { ForecastDataProps, WeatherDataProps } from '../../types/types';
 import DayCardList from '../DayCardList/DayCardList';
 import Greeting from '../Greeting/Greeting';
+import ToDoList from '../ToDoList/ToDoList';
 import WeekCardList from '../WeekCardList/WeekCardList';
 import "./WeatherCard.scss"
 
@@ -50,7 +51,10 @@ const WeatherCard = ({ currentWeather, forecastData }:WeatherCardProps) => {
 
       </div>
       </section>
-      
+      <section className='weathercard__todo'>
+      <ToDoList/>
+
+      </section>
       
      
     </div>  
