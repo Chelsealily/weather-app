@@ -1,14 +1,12 @@
 .day-card {
-    width: 10vw;
-    padding:15px;
+  width: 10vw;
+  padding: 15px;
 
-&__title{
+  &__title {
     text-decoration: 3px underline;
-}    
-   
-&__pic {
-    height:5vh;
+  }
 
-}
-
+  &__pic {
+    height: 5vh;
+  }
 }

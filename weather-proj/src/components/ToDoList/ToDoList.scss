@@ -15,14 +15,13 @@
       width: fit-content;
       border: none;
       background-color: rgba(216, 216, 216, 0.535);
-      margin:10px;
+      margin: 10px;
     }
   }
 
-&__output{
+  &__output {
     display: flex;
-}  
-
+  }
 }
 
 .todo-container {
@@ -38,4 +37,3 @@ input {
   border: 5px solid rgba(250, 250, 250, 0.203);
   font-size: 1rem;
 }
-

@@ -1,11 +1,13 @@
-import { useState, useEffect } from 'react';
-import './App.scss';
-import { WeatherDataProps, ForecastDataProps, HourData } from './types/types';
-import WeatherCard from './components/WeatherCard/WeatherCard';
+import { useState, useEffect } from "react";
+import "./App.scss";
+import { WeatherDataProps, ForecastDataProps, HourData } from "./types/types";
+import WeatherCard from "./components/WeatherCard/WeatherCard";
 
 function App() {
   const [weatherData, setWeatherData] = useState<WeatherDataProps | null>(null);
-  const [forecastData, setForecastData] = useState<ForecastDataProps | null>(null);
+  const [forecastData, setForecastData] = useState<ForecastDataProps | null>(
+    null
+  );
 
   const getWeather = async (latitude: number, longitude: number) => {
     const url = `https://api.weatherapi.com/v1/forecast.json?key=44f91b4cf89e4c89a4c173822242702&q=${latitude},${longitude}&days=6&aqi=yes&alerts=no`;
@@ -28,13 +30,14 @@ function App() {
     setWeatherData(currentWeather);
 
     // Forecast data
-    const forecastDays: HourData[][] = data.forecast.forecastday.map((day: any) =>
-      day.hour.map((hour: any) => ({
-        time: hour.time,
-        temp_c: hour.temp_c,
-        condition_text: hour.condition.text,
-        condition_icon: hour.condition.icon,
-      }))
+    const forecastDays: HourData[][] = data.forecast.forecastday.map(
+      (day: any) =>
+        day.hour.map((hour: any) => ({
+          time: hour.time,
+          temp_c: hour.temp_c,
+          condition_text: hour.condition.text,
+          condition_icon: hour.condition.icon,
+        }))
     );
 
     setForecastData(forecastDays);
@@ -48,13 +51,15 @@ function App() {
           getWeather(latitude, longitude);
         },
         () => {
-          console.error('Error getting location. Defaulting to London.');
+          console.error("Error getting location. Defaulting to London.");
           // Default to London coordinates
           getWeather(51.5074, -0.1278); // London coordinates
         }
       );
     } else {
-      console.error('Geolocation is not supported by this browser. Defaulting to London.');
+      console.error(
+        "Geolocation is not supported by this browser. Defaulting to London."
+      );
       // Default to London coordinates
       getWeather(51.5074, -0.1278); // London coordinates
     }
@@ -62,7 +67,9 @@ function App() {
 
   return (
     <div className="App">
-      {weatherData && forecastData && <WeatherCard currentWeather={weatherData} forecastData={forecastData} />}
+      {weatherData && forecastData && (
+        <WeatherCard currentWeather={weatherData} forecastData={forecastData} />
+      )}
     </div>
   );
 }

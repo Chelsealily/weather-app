@@ -1,119 +1,118 @@
 @use "../../styles/variables" as *;
 
-.weathercard{
-    background-image: linear-gradient(to right, rgb(204, 204, 204) , rgb(124, 165, 187));
-    padding: 100px;
-    width: 60vw;
-    height: 120vh;
-    padding-bottom: 3rem;
-    border-radius: 10%;
-    text-align: center;
+.weathercard {
+  background-image: linear-gradient(
+    to right,
+    rgb(204, 204, 204),
+    rgb(124, 165, 187)
+  );
+  padding: 100px;
+  width: 60vw;
+  height: 120vh;
+  padding-bottom: 3rem;
+  border-radius: 10%;
+  text-align: center;
 
-    &__grid{
-        display: grid;
-        align-items: start;
-        grid-template-columns: repeat(2, auto);
-        justify-content: space-around;
+  &__grid {
+    display: grid;
+    align-items: start;
+    grid-template-columns: repeat(2, auto);
+    justify-content: space-around;
+  }
 
-    }
-
-    &__greeting{
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-
-        &--text{
-            display: flex;
-            flex-direction: column;
-            align-items: flex-end;
-        }
-    }
-
-    &__weekForecast{
-        display:flex;
-        justify-content: center;
-    }
-
-    &__moreInfo {
-        display: flex;
-        flex-direction: row;
-        gap: 3rem;
-        padding: 20px;
-        background-color: rgba(126, 186, 236, 0.444);
-        text-align: center;
-        justify-content: space-around;
-    
-        &--title{
-            text-align: center;
-            background-color: rgba(127, 255, 212, 0.195);
-            width:40vw;
-        }
-    }   
-
-    &__top{
-        display: flex;
-        flex-direction: column-reverse;
-        align-items: center;
-        background-color: rgba(222, 222, 222, 0.643);
-        padding:20px;
-        height:40vh;
-        justify-content: space-around;
-        width:15vw;
-        margin:1rem;
-    }
-
-    &__title{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: space-evenly;
-        gap:2rem;
-
-        &--pic{
-            height:8vh;
-        }
-    }
-
-
-}
-
-.weathercard__middle{
-    padding-left: 2rem;
-    width: 40vw;
-    height:40vh;
+  &__greeting {
     display: flex;
-    flex-direction: column;
-    align-items: stretch;
-    justify-content: flex-start;
-    gap: 1rem;
-}
+    justify-content: space-between;
+    align-items: center;
 
-.weathercard__dayForecast{
-    padding-top: 1rem;
-    background-color: rgba(240, 255, 255, 0.301);
-}
+    &--text {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+    }
+  }
 
-body{
-    background-color: rgba(143, 143, 143, 0.657);
-    color: $color-gray;
-    font-family: $font-body;
-    font-size: 1.1rem;
+  &__weekForecast {
     display: flex;
     justify-content: center;
-    padding-top: 3rem;
+  }
+
+  &__moreInfo {
+    display: flex;
+    flex-direction: row;
+    gap: 3rem;
+    padding: 20px;
+    background-color: rgba(126, 186, 236, 0.444);
+    text-align: center;
+    justify-content: space-around;
+
+    &--title {
+      text-align: center;
+      background-color: rgba(127, 255, 212, 0.195);
+      width: 40vw;
+    }
+  }
+
+  &__top {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    background-color: rgba(222, 222, 222, 0.643);
+    padding: 20px;
+    height: 40vh;
+    justify-content: space-around;
+    width: 15vw;
+    margin: 1rem;
+  }
+
+  &__title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 2rem;
+
+    &--pic {
+      height: 8vh;
+    }
+  }
 }
 
-h1{
-    font-size: 3.9rem;
-    margin: 0;
-    text-shadow: 5px 5px #b1b1b1;
-    color:rgb(105, 105, 105);
+.weathercard__middle {
+  padding-left: 2rem;
+  width: 40vw;
+  height: 40vh;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: flex-start;
+  gap: 1rem;
 }
 
+.weathercard__dayForecast {
+  padding-top: 1rem;
+  background-color: rgba(240, 255, 255, 0.301);
+}
 
+body {
+  background-color: rgba(143, 143, 143, 0.657);
+  color: $color-gray;
+  font-family: $font-body;
+  font-size: 1.1rem;
+  display: flex;
+  justify-content: center;
+  padding-top: 3rem;
+}
+
+h1 {
+  font-size: 3.9rem;
+  margin: 0;
+  text-shadow: 5px 5px #b1b1b1;
+  color: rgb(105, 105, 105);
+}
 
 h2 {
-    font-size: 1.2rem;
-    text-align: center;
-    font-weight: 800;
+  font-size: 1.2rem;
+  text-align: center;
+  font-weight: 800;
 }
