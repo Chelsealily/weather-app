@@ -41,3 +41,19 @@
 
 }
 }
+
+@media screen and (max-width: 425px) {
+
+  .week-card{
+    width:80vw;
+
+    &__list{
+      width:80vw;  
+  }
+
+  &__inner {
+    width: 16vw;
+    
+  }
+}
+}
