@@ -18,7 +18,7 @@ const Greeting = () => {
 
   return (
     <div>
-      <h3>{greetingMessage}</h3>
+      <h3 className="greeting__message">{greetingMessage}</h3>
     </div>
   );
 };

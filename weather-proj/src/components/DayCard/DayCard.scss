@@ -10,3 +10,13 @@
     height: 5vh;
   }
 }
+
+@media screen and (max-width: 768px) {
+
+  .day-card{
+    width: 5vw;
+    display: flex;
+    flex-direction: column;
+
+}
+}

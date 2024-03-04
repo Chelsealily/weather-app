@@ -1,6 +1,23 @@
-h3{
+.greeting__message{
     font-size: 3.5rem;
     margin: 10px;
     text-shadow: 5px 5px #e5e5e5;
 }
 
+@media screen and (max-width: 768px) {
+
+    .greeting__message{
+        font-size: 2rem;
+  }
+  }
+  
+  @media screen and (max-width: 425px) {
+  
+    .greeting__message{
+        font-size: 2rem;
+        margin: 5px;
+  }
+  
+  
+  
+  }
