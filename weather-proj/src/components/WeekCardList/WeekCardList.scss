@@ -1,15 +1,28 @@
 
 .week-card{
+    margin:1rem;
     text-align: center;
     background-color: rgba(127, 255, 212, 0.195);
-    width:60vw;
-}
+    width:40vw;
 
-.week-card__list{
+
+&__list{
     display:flex;
     flex-direction: row;
     align-items: flex-start;
-    width:60vw;
+    width:40vw;
     text-align: center;
     background-color: rgba(250, 235, 215, 0.114);
+    margin:1rem;
+
+}
+
+&__inner{
+    width:8vw;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
 }

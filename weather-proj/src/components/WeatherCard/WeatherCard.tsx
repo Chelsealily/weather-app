@@ -41,17 +41,19 @@ const WeatherCard = ({ currentWeather, forecastData }:WeatherCardProps) => {
       <p>Humidty:<br></br><br></br> {currentWeather.humidity}</p>
       <p>Cloud:<br></br><br></br> {currentWeather.cloud}</p>
       </div>
+    
       <div className='weathercard__dayForecast'>
       <DayCardList forecastData={forecastData} />
       </div>
-      </section>
-      </div>  
-      <section className='weathercard__weekForecast'>
+      <div className='weathercard__weekForecast'>
       <WeekCardList forecastData={forecastData}/>
 
+      </div>
       </section>
+      
+      
      
-    
+    </div>  
     </section>
    
   );

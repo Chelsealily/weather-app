@@ -34,7 +34,7 @@ const WeekCardList = ({ forecastData }: WeekCardListProps) => {
                     
                     <div className="week-card__inner">
                         {/* Render only the filtered hours */}
-                        <p>{getDayNameFromDate(hourData[0].time)}</p>
+                        <p className="weekcard__inner--title">{getDayNameFromDate(hourData[0].time)}</p>
                         {filteredHours(hourData).map((hour, i) => (
                             <DayCard key={i} hour={hour} />
                         ))}
