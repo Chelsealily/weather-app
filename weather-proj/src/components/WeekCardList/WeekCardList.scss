@@ -1,0 +1,15 @@
+
+.week-card{
+    text-align: center;
+    background-color: rgba(127, 255, 212, 0.195);
+    width:60vw;
+}
+
+.week-card__list{
+    display:flex;
+    flex-direction: row;
+    align-items: flex-start;
+    width:60vw;
+    text-align: center;
+    background-color: rgba(250, 235, 215, 0.114);
+}

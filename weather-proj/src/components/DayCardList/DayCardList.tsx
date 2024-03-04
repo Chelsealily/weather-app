@@ -31,9 +31,9 @@ const DayCardList = ({ forecastData }:DayCardListProps) => {
     <div className="day-card-list">
       {/* Filter and render forecast data for each day */}
       {forecastData.map((hourData, index) => (
-        <div key={index} className="day-card-container">
+        <div key={index} className="day-card-list__container">
     
-          <div className="day-card-inner">
+          <div className="day-card-list__inner">
             {/* Render only the filtered hours */}
             {filteredHours(hourData).map((hour, i) => (
               <DayCard key={i} hour={hour} />

@@ -4,7 +4,7 @@
     background-image: linear-gradient(to right, rgb(204, 204, 204) , rgb(124, 165, 187));
     padding: 100px;
     width: 60vw;
-    height: 70vh;
+    height: 100vh;
     gap: 30px;
     padding-bottom: 3rem;
     border-radius: 10%;
@@ -28,6 +28,27 @@
             align-items: flex-end;
         }
     }
+
+    &__weekForecast{
+        display:flex;
+        justify-content: center;
+    }
+
+    &__moreInfo {
+        display: flex;
+        flex-direction: row;
+        gap: 3rem;
+        padding: 20px;
+        background-color: rgba(126, 186, 236, 0.444);
+        text-align: center;
+        justify-content: space-around;
+    
+        &--title{
+            text-align: center;
+            background-color: rgba(127, 255, 212, 0.195);
+            width:40vw;
+        }
+    }   
 
     &__top{
         display: flex;
@@ -53,15 +74,7 @@
 
 }
 
-.weathercard__moreInfo {
-    display: flex;
-    flex-direction: row;
-    gap: 3rem;
-    padding: 20px;
-    background-color: rgba(126, 186, 236, 0.444);
-    text-align: center;
-    justify-content: space-around;
-}    
+ 
 
 .weathercard__middle{
     padding-left: 2rem;

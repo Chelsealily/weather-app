@@ -1,6 +1,7 @@
 import { ForecastDataProps, WeatherDataProps } from '../../types/types';
 import DayCardList from '../DayCardList/DayCardList';
 import Greeting from '../Greeting/Greeting';
+import WeekCardList from '../WeekCardList/WeekCardList';
 import "./WeatherCard.scss"
 
 type WeatherCardProps = {
@@ -32,7 +33,9 @@ const WeatherCard = ({ currentWeather, forecastData }:WeatherCardProps) => {
       </div> 
       </section>   
       <section className='weathercard__middle'>
+      <p className="weathercard__moreInfo--title">{ "> Current Conditions"}</p>
       <div className='weathercard__moreInfo'>
+      
       <p>Feels like: <br></br><br></br> {currentWeather.feelslike_c}°C</p>  
       <p>Wind: <br></br><br></br>{currentWeather.wind_mph} mph</p>  
       <p>Humidty:<br></br><br></br> {currentWeather.humidity}</p>
@@ -42,12 +45,13 @@ const WeatherCard = ({ currentWeather, forecastData }:WeatherCardProps) => {
       <DayCardList forecastData={forecastData} />
       </div>
       </section>
+      </div>  
       <section className='weathercard__weekForecast'>
-      
+      <WeekCardList forecastData={forecastData}/>
 
       </section>
      
-    </div>  
+    
     </section>
    
   );

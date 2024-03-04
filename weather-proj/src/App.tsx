@@ -8,7 +8,7 @@ function App() {
   const [forecastData, setForecastData] = useState<ForecastDataProps | null>(null);
 
   const getWeather = async (latitude: number, longitude: number) => {
-    const url = `https://api.weatherapi.com/v1/forecast.json?key=44f91b4cf89e4c89a4c173822242702&q=${latitude},${longitude}&days=7&aqi=yes&alerts=no`;
+    const url = `https://api.weatherapi.com/v1/forecast.json?key=44f91b4cf89e4c89a4c173822242702&q=${latitude},${longitude}&days=6&aqi=yes&alerts=no`;
     const res = await fetch(url);
     const data = await res.json();
 
