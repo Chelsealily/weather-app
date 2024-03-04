@@ -6,27 +6,50 @@
     width: 60vw;
     height: 70vh;
     gap: 30px;
-    display: grid;
-    justify-content: center;
-    align-items: center;
-    grid-template-columns: repeat(2, auto);
+    padding-bottom: 3rem;
+    border-radius: 10%;
+
+    &__grid{
+        display: grid;
+        justify-content: center;
+        align-items: center;
+        grid-template-columns: repeat(2, auto);
+
+    }
+
+    &__greeting{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        &--text{
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+        }
+    }
 
     &__top{
         display: flex;
         flex-direction: column-reverse;
         align-items: center;
         background-color: rgba(222, 222, 222, 0.643);
-        padding:20px
+        padding:20px;
+        height:40vh;
     }
 
     &__title{
         display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+        gap:2rem;
+
+        &--pic{
+            height:8vh;
+        }
     }
 
-    &__info{
-        display: flex;
-        flex-direction: column;
-}
 
 }
 
@@ -35,9 +58,26 @@
     flex-direction: row;
     gap: 3rem;
     padding: 20px;
-    background-color: rgba(126, 186, 236, 0.614);
+    background-color: rgba(126, 186, 236, 0.444);
     text-align: center;
+    justify-content: space-around;
 }    
+
+.weathercard__middle{
+    padding-left: 2rem;
+    width: 40vw;
+    height:40vh;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: space-around;
+    gap: 1rem;
+}
+
+.weathercard__dayForecast{
+    padding-top: 1rem;
+    background-color: rgba(240, 255, 255, 0.301);
+}
 
 body{
     background-color: rgba(143, 143, 143, 0.657);
@@ -50,13 +90,13 @@ body{
 }
 
 h1{
-    font-size: 3.5rem;
+    font-size: 3.9rem;
     margin: 0;
+    text-shadow: 5px 5px #b1b1b1;
+    color:rgb(105, 105, 105);
 }
 
-img{
-    height:10vw;
-}
+
 
 h2 {
     font-size: 1.2rem;

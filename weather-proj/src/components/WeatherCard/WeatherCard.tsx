@@ -1,33 +1,55 @@
-import { WeatherDataProps } from '../../types/types';
+import { ForecastDataProps, WeatherDataProps } from '../../types/types';
+import DayCardList from '../DayCardList/DayCardList';
 import Greeting from '../Greeting/Greeting';
 import "./WeatherCard.scss"
 
-const WeatherCard = ({ location, temperature_c, condition, condition_icon, localtime, wind_mph, humidity, cloud,feelslike_c }:WeatherDataProps) => {
+type WeatherCardProps = {
+    currentWeather: WeatherDataProps;
+    forecastData: ForecastDataProps;
+  };
+
+const WeatherCard = ({ currentWeather, forecastData }:WeatherCardProps) => {
 
   return (
+    
     <section className="weathercard"> 
-        <div className='weathercard__title'> <Greeting/> </div>  
+      <div className='weathercard__greeting'> 
+        <Greeting/>
+        <div className='weathercard__greeting--text'>
+        <p> {currentWeather.localtime}</p>
+        <p>{currentWeather.location}</p>
+        </div>
+      </div> 
+    <div className='weathercard__grid'>
       <section className='weathercard__top'>
-      <div className='weathercard__info'>
-      <h2>{"> Today's Forecast"}</h2>  
-      <p>○ {localtime}</p>
-      <p>○ {location}</p>
-      <p>○ {condition}</p>
-      </div>
+      
       <div className='weathercard__title'> 
-      <h1> {temperature_c}°C</h1>
-      <img src={condition_icon} alt='weather icon'/>
+      <p>{"> Current Weather"}</p>
+      <h1> {currentWeather.temperature_c}°C</h1>
+      <p>○ {currentWeather.condition}</p>
+      <img className='weathercard__title--pic' src={currentWeather.condition_icon} alt='weather icon'/>
+
       </div> 
       </section>   
       <section className='weathercard__middle'>
       <div className='weathercard__moreInfo'>
-      <p>Feels like: <br></br><br></br> {feelslike_c}°C</p>  
-      <p>Wind: <br></br><br></br>{wind_mph} mph</p>  
-      <p>Humidty:<br></br><br></br> {humidity}</p>
-      <p>Cloud:<br></br><br></br> {cloud}</p>
+      <p>Feels like: <br></br><br></br> {currentWeather.feelslike_c}°C</p>  
+      <p>Wind: <br></br><br></br>{currentWeather.wind_mph} mph</p>  
+      <p>Humidty:<br></br><br></br> {currentWeather.humidity}</p>
+      <p>Cloud:<br></br><br></br> {currentWeather.cloud}</p>
+      </div>
+      <div className='weathercard__dayForecast'>
+      <DayCardList forecastData={forecastData} />
       </div>
       </section>
+      <section className='weathercard__weekForecast'>
+      
+
+      </section>
+     
+    </div>  
     </section>
+   
   );
 };
 
