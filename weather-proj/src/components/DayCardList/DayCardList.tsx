@@ -11,7 +11,7 @@ const DayCardList = ({ forecastData }: DayCardListProps) => {
   const filteredHours = (hours: HourData[]): HourData[] => {
     const currentDate = new Date();
     const currentDay = currentDate.toLocaleDateString("en-UK", {
-      weekday: "long",
+      weekday: "short",
     });
 
     const targetTimes = ["06:00", "10:00", "14:00", "18:00", "22:00"];
@@ -19,7 +19,7 @@ const DayCardList = ({ forecastData }: DayCardListProps) => {
     // Filter hours for the current day and specific times
     return hours.filter((hour) => {
       const hourDate = new Date(hour.time);
-      const hourDay = hourDate.toLocaleDateString("en-UK", { weekday: "long" });
+      const hourDay = hourDate.toLocaleDateString("en-UK", { weekday: "short" });
       const hourTime = hourDate.toLocaleTimeString("en-UK", {
         hour: "2-digit",
         minute: "2-digit",
@@ -32,7 +32,7 @@ const DayCardList = ({ forecastData }: DayCardListProps) => {
 
   return (
     <div className="day-card-list">
-      {/* Filter and render forecast data for each day */}
+      {/* Render forecast data for each day */}
       {forecastData.map((hourData, index) => (
         <div key={index} className="day-card-list__container">
           <div className="day-card-list__inner">

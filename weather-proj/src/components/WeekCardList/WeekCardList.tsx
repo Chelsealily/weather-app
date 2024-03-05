@@ -11,13 +11,13 @@ const WeekCardList = ({ forecastData }: WeekCardListProps) => {
   const getDayNameFromDate = (dateString: string): string => {
     const date = new Date(dateString);
     const days = [
-      "Sunday",
-      "Monday",
-      "Tuesday",
-      "Wednesday",
-      "Thursday",
-      "Friday",
-      "Saturday",
+      "Sun",
+      "Mon",
+      "Tues",
+      "Wed",
+      "Thur",
+      "Fri",
+      "Sat",
     ];
     return days[date.getDay()];
   };
@@ -29,15 +29,14 @@ const WeekCardList = ({ forecastData }: WeekCardListProps) => {
   };
 
   // Slice the forecastData array to skip the first day
-  const next7DaysData = forecastData.slice(1);
+  const next5DaysData = forecastData.slice(1);
 
   return (
     <section>
       <p className="week-card">{"> Later This Week"}</p>
       <div className="week-card__list">
-        {next7DaysData.map((hourData, index) => (
+        {next5DaysData.map((hourData, index) => (
           <div key={index} className="week-card__container">
-            {/* Assuming date exists within the first object in the hourData array */}
 
             <div className="week-card__inner">
               {/* Render only the filtered hours */}
